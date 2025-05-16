@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: black;
+}
+* {
+	cursor: none;
+}
+canvas {
+	pointer-events: none;
+}
+section {
+	height: 100vh;
+	overflow-x: hidden;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+}
+#scene {
+	position: fixed;
+	inset: 0;
+	z-index: 99;
+	pointer-events: none;
+}
+#pointer {
+	position: fixed;
+	z-index: 999;
+	width: 10px;
+	aspect-ratio: 1;
+	top: 0;
+	border-radius: 100%;
+	pointer-events: none;
+	background-color: white;
+	display: none;
+}
+#banner {
+	text-align: center;
+	align-content: center;
+}
+.text {
+	position: fixed;
+	color: white;
+	inset: 0;
+	opacity: 0%;
+	top: 18vh;
+	font-size: 25vh;
+	animation: titleAnim;
+	animation-timeline: view(0px 50%);
+	transition: all ease-in-out 0.3s;
+}
+@keyframes titleAnim {
+	from {
+		transform: scale(1);
+		opacity: 100%;
+	}
+	to {
+		transform: scale(1.5);
+		opacity: 0%;
+	}
+}
+#second {
+	position: relative;
+	transform: translateY(-200%) scale(0);
+	animation-name: fade;
+	animation-timeline: view();
+	animation-timing-function: ease-in-out;
+}
+
+#second * {
+	position: absolute;
+	inset: 0;
+}
+#second canvas {
+	position: absolute;
+	inset: 0;
+}
+
+.text1 {
+	text-align: left;
+	align-content: center;
+	font-size: 130px;
+	left: 100px !important;
+}
+
+@keyframes fade {
+	to {
+		transform: translateY(200%) scale(1.5);
+	}
+}
